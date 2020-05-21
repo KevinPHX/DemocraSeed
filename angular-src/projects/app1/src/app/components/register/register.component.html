@@ -1,0 +1,70 @@
+<h1 lass='page-header'>Register</h1>
+<form (submit)='onRegisterSubmit()'>
+
+
+
+  <div class = 'col-xs-6'>
+    <div class='form-group'>
+      <label>First Name</label>
+      <input type='text' [(ngModel)]='firstname' name='firstname' class="form-control">
+    </div>
+  </div>
+
+  <div class = 'col-xs-6'>
+    <div class='form-group'>
+      <label>Last Name</label>
+      <input type='text' [(ngModel)]='lastname' name='lastname' class="form-control">
+    </div>
+  </div>
+
+
+
+  <div class = 'col-xs-7'>
+  <div class='form-group'>
+    <label>Email</label>
+    <input type= 'text' [(ngModel)]='email' name='email' class='form-control'>
+  </div>
+  </div>
+  <div class = 'col-xs-5'>
+  <div class='form-group'>
+    <label>Username</label>
+    <input type= 'text' [(ngModel)]='username' name='username' class='form-control'>
+  </div>
+  </div>
+  <div class = 'col-xs-12'>
+  <div class='form-group'>
+    <label>Password</label>
+    <input type= 'password' [(ngModel)]='password' name='password' class='form-control'>
+  </div>
+
+  <br>
+  <div class="checkbox">
+    <label><input type="checkbox" [(ngModel)]='agreement' name='agreement' value="">I accept the <a [routerLink]="['/termsandconditions']">Terms and Conditions</a></label>
+  </div>
+
+  </div>
+
+` <br>`
+  <input type='submit' class = 'btn btn-primary' value='Submit' >
+
+
+
+</form>
+
+<div class="modal" id="myModal" role="dialog" style="z-index: 9999;">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-body">
+          <h3>Congratulations on making your account!</h3>
+          <p> A confirmation email has been sent to your email account with further instructions.</p>
+          <p>Please note: We use a third party email service, so the confirmation email may show up as spam.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" [routerLink]="['/app1/login']">Ok</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">Open Modal</button>

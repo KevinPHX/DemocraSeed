@@ -1,0 +1,10 @@
+<div *ngIf='user'>
+  <h1 class='page-header'>{{user.administratorfirstname}} {{user.administratorlastname}}</h1>
+  <ul class='list-group'>
+    <li class='list-group-item'>Username: {{user.username}}</li>
+    <li class='list-group-item'>Email: {{user.administratoremail}}</li>
+  </ul>
+
+  <a class='btn btn-primary' [routerLink]="['/app1/update/', user._id]" value = "Update">Update</a>
+
+</div>

@@ -1,0 +1,50 @@
+<h1 class='page-header'>Mentor Dashboard</h1>
+
+<div class="searchbar" style="float: right; width: 100%;">
+  <input type="text" [(ngModel)]="filter.groupname" name="groupname" class="form-control"  placeholder="Search">
+  <br>
+</div>
+
+<div *ngFor="let user of users | filterBy: filter; let in=index ">
+  <br><br><br>
+  <!-- <table style="width:100%">
+  <tr>
+    <td style = "width: 60%; text-align: left; padding-left: 50px;">
+      <h1><a [routerLink]="['/app2/group/', user._id]">{{user.groupname}} fagdaggrahrahgagrarhraharhargafga</a></h1>
+    </td>
+    <td style = "width: 40%; text-align: left; padding-left: 50px;">
+      <h2>Progress: dfiadfjdfadfafaddfadfadfadgfgragaaif</h2>
+    </td>
+  </tr>
+  <tr>
+    <td style = "width: 40%; text-align: left; padding-left: 50px;">
+      <h2>Progress: {{findProgress(user)}}</h2>
+    </td>
+    <td></td>
+  </tr>
+  </table> -->
+  <div class="col-sm-12" id="user">
+    <div class="col-sm-7">
+      <h1 style='word-wrap: break-word;'><a [routerLink]="['/app2/group/', user._id]">{{user.groupname}}</a></h1>
+    </div>
+    <div class="col-sm-5">
+      <h2 style='word-wrap: break-word;'>Progress: {{findProgress(user)}}</h2>
+    </div>
+    <div class="col-sm-12"><br></div>
+    <div class="col-sm-3">
+      <h2>Current Tasks:</h2>
+    </div>
+    <div *ngFor="let firsttask of tasks[in]">
+      <div class="col-sm-3">
+
+        <div  id="task">
+          <!-- {{getFirstTasks("5e8eb38febf21c7bfa267054")}} -->
+            <h4 style='word-wrap: break-word;'>{{firsttask.content}}</h4>
+            <br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+</div>

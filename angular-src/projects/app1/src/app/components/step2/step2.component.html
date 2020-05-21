@@ -1,0 +1,104 @@
+
+
+<h1 class='page-header'>Step 2</h1>
+
+
+
+
+<form (submit)='onStep2Submit()'>
+  <div class='form-group'>
+    <label>Page Title</label>
+    <input type='text' [(ngModel)]='pagetitle' name='pagetitle' class="form-control">
+  </div>
+  <div class='form-group'>
+    <label>Page Description</label>
+    <textarea [(ngModel)]='pagedescription' name='pagedescription' class="form-control"></textarea>
+  </div>
+
+  <input type='submit' class = 'btn btn-primary' value='Submit' ><button class="btn btn-link" name="button" [routerLink]="['/step2']">Preview</button>
+
+</form>
+<br><br>
+
+<form>
+<div class= "col-sm-6" style="z-index: 9999;">
+  <label style="width:100%">Videos and Descriptions</label>
+    <div  *ngFor="let video of videos; let in = index;" >
+      <!-- <div class="col-sm-2"> -->
+      <tr>
+        <td>
+          <button class = 'btn btn-primary' (click)="moveUp(video, in);" ><span class="glyphicon glyphicon-chevron-up"></span></button>
+        </td>
+        <td>
+          <button  class = 'btn btn-primary'(click)="moveDown(video, in);"><span class="glyphicon glyphicon-chevron-down"></span></button>
+        </td>
+      <!-- </div> -->
+
+      <!-- <div class="col-sm-10"> -->
+        <td style="width:100%; height: 50%;">
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse{{in}}">
+                  {{video.title}}
+
+                </a>
+              </h4>
+            </div>
+            <div id="collapse{{in}}" class="panel-collapse collapse">
+              <div class="panel-body">
+                <iframe width="100%" height="360px" [attr.src]="sanitizer.bypassSecurityTrustResourceUrl(embedLink(video.videolink))"></iframe>
+                <br><br>
+                {{video.description}}
+                <br>
+                <a *ngIf="video.docname != undefined" target="_blank" src= "{{video.doclink}}">{{video.docname}}</a>
+              </div>
+              <div class="panel-footer">
+                <button  class = 'btn btn-danger'(click)="deleteVideo(video._id);">Delete Video</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </td>
+        </tr>
+      <!-- </div> -->
+
+      <br>
+    </div>
+    <input type='submit' (click)='saveOrder()' class = 'btn btn-primary' value='Save Order' >
+    <br><br>
+</div>
+</form>
+
+<form (submit)='onVideoSubmit()'>
+<div class = 'col-sm-6'>
+  <div class='form-group'>
+    <label>Title</label>
+    <input type='text' [(ngModel)]='title' name='title' class="form-control">
+  </div>
+  <br />
+  <div class='form-group'>
+    <label>Video Link</label>
+    <input type='text' [(ngModel)]='videolink' name='videolink' class="form-control">
+  </div>
+  <br />
+  <div class='form-group'>
+    <label>Description</label>
+    <input type='text' [(ngModel)]='description' name='description' class="form-control">
+  </div>
+  <div class='form-group'>
+    <label>Document Name (optional)</label>
+    <input type='text' [(ngModel)]='docname' name='docname' class="form-control">
+  </div>
+  <div class='form-group'>
+    <label>Document Link</label>
+    <input type='text' [(ngModel)]='doclink' name='doclink' class="form-control">
+  </div>
+  <br />
+  <input type='submit' class = 'btn btn-primary' value='Add Video' >
+
+</div>
+</form>
+
+<br>

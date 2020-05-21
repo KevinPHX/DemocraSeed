@@ -1,0 +1,77 @@
+<div ng-controller="ngOnInit">
+<div *ngIf='user'>
+<h1 class='page-header'>Update</h1>
+<div class = 'col-xs-6'>
+  <div class='form-group'>
+    <label>First Name</label>
+    <input type='text' [(ngModel)]='advisorfirstname' name='advisorfirstname' class="form-control">
+  </div>
+</div>
+
+<div class = 'col-xs-6'>
+  <div class='form-group'>
+    <label>Last Name</label>
+    <input type='text' [(ngModel)]='advisorlastname' name='advisorlastname' class="form-control">
+  </div>
+</div>
+
+<div class = 'col-xs-6'>
+  <div class='form-group'>
+    <label>Group Name</label>
+    <input type='text' [(ngModel)]='groupname' name='groupname' class="form-control">
+  </div>
+</div>
+<div class = 'col-xs-6'>
+<div class='form-group'>
+  <label>City/Community</label><br>
+  <input type='text' [(ngModel)]='cityname' name='cityname' class="form-control">
+</div>
+</div>
+<div class = 'col-xs-6'>
+<div class='form-group'>
+  <label>Email</label>
+  <input type= 'text' [(ngModel)]='advisoremail' name='advisoremail' class='form-control'>
+</div>
+</div>
+<div class = 'col-xs-6'>
+<div class='form-group'>
+  <label>Username</label>
+  <input type= 'text' [(ngModel)]='username' name='username' class='form-control'>
+</div>
+</div>
+
+
+<form #formRef="ngForm">
+       <div *ngFor="let member of memberlist; let in=index">
+
+           <div class="form-group">
+             <div class= "col-xs-2">
+               <button  class = 'btn btn-default'  (click)="remove(in)"><span class="glyphicon glyphicon-remove"></span></button>
+             </div>
+             <div class= "col-xs-10">
+               <label>Member First Name</label>
+               <input  type="text" [(ngModel)]="memberlist[in].memberfirstname" name="memberfirstname{{in}}" class="form-control" #name="ngModel" value = "memberlist[in].memberfirstname" required />
+               <br>
+               <label>Member Last Name</label>
+               <input  type="text" [(ngModel)]="memberlist[in].memberlastname" name="memberlastname{{in}}" class="form-control" #name="ngModel" value = "memberlist[in].memberlastname" required />
+               <br>
+               <label>Member Email</label>
+               <input  type="text" [(ngModel)]="memberlist[in].memberemail" name="memberemail{{in}}" class="form-control" #name="ngModel" value = "memberlist[in].memberemail" required />
+               <br>
+             </div>
+             <br />
+
+
+
+         <!--<p [hidden]="words2[in].value">Field is required</p>
+         {{formRef.form.name1}}-->
+       </div>
+       <!-- <br /> -->
+
+   </div>
+
+   <button style="float: right;" class = 'btn btn-default'  (click)="add()">Add Member</button>
+ </form>
+
+
+  <input type='submit' class = 'btn btn-primary' value='Submit' (click)="onUpdateSubmit()"> <a class='btn' [routerLink]="['/profile']" value = "Cancel">Cancel</a>

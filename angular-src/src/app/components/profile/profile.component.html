@@ -1,0 +1,46 @@
+<div *ngIf='user'>
+  <!-- <h1 class='page-header'>{{user.groupname}}</h1>
+  <ul class='list-group'>
+
+    <li class='list-group-item'>Username: {{user.username}}</li>
+    <li class='list-group-item'>Email: {{user.advisoremail}}</li>
+  </ul>
+
+  <a class='btn btn-primary' [routerLink]="['/update/', user._id]" value = "Update">Update</a> -->
+
+
+  <h2 style="float:right; padding-right: 50px;word-wrap: break-word;">{{user.cityname}}</h2>
+  <h1 style="padding-left: 15px;word-wrap: break-word;"><b>{{user.groupname}}</b></h1>
+
+  <div class="col-sm-12">
+    <h2 style='word-wrap: break-word;'><b>Progress: {{findProgress()}}</b></h2>
+
+    <br>
+    <div class="col-sm-6">
+      <label>Advisor Name</label>
+      <h3 style='word-wrap: break-word;'>{{user.advisorfirstname}} {{user.advisorlastname}}</h3>
+      <br>
+    </div>
+    <div class="col-sm-6">
+      <label>Advisor Email</label>
+      <h3 style='word-wrap: break-word;'>{{user.advisoremail}}</h3>
+      <br>
+    </div>
+    <div class="col-sm-12"></div>
+    <div class="col-sm-6">
+      <label>Members</label>
+      <div *ngFor="let member of memberlist">
+
+      <ul class="list-group">
+        <li class="list-group-item" style='word-wrap: break-word;'>Name: {{member.memberfirstname}} {{member.memberlastname}}</li>
+        <li class="list-group-item" style='word-wrap: break-word;'>Email: {{member.memberemail}}</li>
+      </ul>
+      <a class='btn btn-primary' [routerLink]="['/update/', user._id]" value = "Update" style="float:center;">Update</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

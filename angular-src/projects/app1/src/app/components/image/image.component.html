@@ -1,0 +1,27 @@
+<!-- <div class="form-group">
+    <label for="file">Choose File</label>
+    <input type="file"
+           id="file"
+           (change)="handleFileInput($event.target.files)">
+
+
+    <input type="submit" name="submit" (click)="uploadFileToActivity()">
+</div> -->
+<h1 class="page-header">Upload Images</h1>
+<input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" style="display:none;" />
+<button class = "btn btn-primary"(click)="onClick()">
+    Upload
+</button>
+<div style="text-align:center; margin-top: 100px; ">
+  <mat-card style="margin-top:10px; width: 50%;">
+
+            <!-- <ul>
+                <li *ngFor="let file of files; let in=index"> -->
+                <div *ngFor="let file of files; let in=index">
+                    <img [src]="file.imageData" class="img-thumbnail" style="width: 100%;" >
+                </div>
+
+                <!-- </li>
+            </ul> -->
+
+    </mat-card></div>

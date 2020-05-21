@@ -1,0 +1,43 @@
+<h1 class='page-header'>Home</h1>
+<form (submit)='onHomeSubmit()'>
+
+
+
+  <div class = 'col-sm-12'>
+    <div class='form-group'>
+      <label>Title/Greeting</label>
+      <input type='text' [(ngModel)]='title' name='title' class="form-control">
+    </div>
+  </div>
+
+
+  <div class = 'col-sm-12'>
+  <div class='form-group'>
+    <label>Information</label>
+    <textarea [(ngModel)]='info' name='info' class='form-control'> </textarea>
+  </div>
+  </div>
+  <div class = 'col-sm-12'>
+  <div class='form-group'>
+    <label>Instructions</label>
+    <textarea [(ngModel)]='instructions' name='instructions' class='form-control'> </textarea>
+  </div>
+  </div>
+  <div class = 'col-sm-12'>
+  <div class='form-group'>
+    <label>Video Link</label>
+    <input type= 'text' [(ngModel)]='videolink' name='videolink' class='form-control'>
+  </div>
+
+  <br>
+
+
+  </div>
+
+  <br>
+  <input type='submit' class = 'btn btn-primary' value='Save Work'> <button class="btn btn-link" name="button" [routerLink]="['/']">Preview</button>
+
+
+
+
+</form>

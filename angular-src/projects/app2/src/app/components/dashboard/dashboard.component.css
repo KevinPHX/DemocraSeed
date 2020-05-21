@@ -1,0 +1,33 @@
+td {
+  text-align: left;
+  text-overflow: clip;
+  vertical-align: text-top;
+  padding: 10px;
+}
+#user {
+  border: #d2d2d2;
+  border-style: inset;
+  border-width: thin;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+h1 {
+  color: #EA7600;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+h2 {
+  color:#001A72;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+#task {
+  border: #d2d2d2;
+  border-style: inset;
+  border-width: thin;
+  padding: 10px;
+  border-radius: 10px;
+  min-height: 80px;
+  /* margin-right: 10px; */
+}

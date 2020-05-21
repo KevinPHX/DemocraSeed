@@ -1,0 +1,8 @@
+h1 {
+  color: #EA7600;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+input[type=text], textarea {
+  color: #434343;
+}

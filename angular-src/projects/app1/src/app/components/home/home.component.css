@@ -1,0 +1,21 @@
+.jumbotron {
+  margin:10px;
+  height: 20%;
+  width: 100%;
+  background-color: #007fc2;
+  /* background-color:#3aa9e7; */
+  /* background-image: url("https://png.pngtree.com/thumb_back/fh260/back_pic/03/83/11/2157c84a65827a8.jpg"); */
+  background-size: cover;
+}
+h1 {
+  color: #EA7600;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+h3 {
+  color:#001A72;
+  font-family: "Open Sans", sans-serif;
+}
+a, input[type=text], textarea {
+  color: #434343;
+}

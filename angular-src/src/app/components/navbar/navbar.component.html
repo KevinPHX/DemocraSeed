@@ -1,0 +1,81 @@
+<nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div  id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]='{exact:true}'><a class="navbar-brand" [routerLink]="['/']"><b>Home</b></a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li *ngIf='!authService.loggedIn() && navdisplay == "User"' [routerLinkActive]="['active']" [routerLinkActiveOptions]='{exact:true}'>
+              <a [routerLink]="['/dashboard']">
+                Dashboard
+              </a>
+            </li>
+
+              <!-- <a [routerLink]="['/app1/dashboard']">Dashboard</a> -->
+
+
+
+              <!-- <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" [routerLink]="['/dashboard']">Dashboard
+                <i class="fa fa-caret-down"></i>
+              </a>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                  <a href="dashboard">Dashboard</a>
+                  <a href="step1">{{step1.title}}</a>
+                  <a href="step2">{{step2.title}}</a>
+                  <a href="step3">{{step3.title}}</a>
+                  <a href="step4">{{step4.title}}</a>
+                  <a href="step5">{{step5.title}}</a>
+                </div>
+              </div> -->
+
+
+              <!-- <li class="nav-item dropdown" *ngIf='!authService.loggedIn() && navdisplay == "User"' [routerLinkActive]="['active']" [routerLinkActiveOptions]='{exact:true}'>
+                  <a class="nav-link dropdown-toggle" href="dashboard" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                    <i class="fa fa-caret-down"></i>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="step1">{{step1.title}}</a>
+                    <a class="dropdown-item" href="step2">{{step2.title}}</a>
+                    <a class="dropdown-item" href="step3">{{step3.title}}</a>
+                    <a class="dropdown-item" href="step4">{{step4.title}}</a>
+                    <a class="dropdown-item" href="step5">{{step5.title}}</a>
+                  </div>
+                </li> -->
+            <!-- </li> -->
+
+
+            <li *ngIf='!authService.loggedIn() && navdisplay == "Administrator"' [routerLinkActive]="['active']" [routerLinkActiveOptions]='{exact:true}'>
+
+              <a [routerLink]="['/app1/dashboard']">Dashboard</a></li>
+
+
+
+
+
+
+
+            <li *ngIf='!authService.loggedIn() && navdisplay == "Mentor"' [routerLinkActive]="['active']" [routerLinkActiveOptions]='{exact:true}'><a [routerLink]="['/app2/dashboard']">Dashboard</a></li>
+
+
+
+            <li *ngIf='!authService.loggedIn() && navdisplay == "User"' [routerLinkActive]="['active']" [routerLinkActiveOptions]='{exact:true}'><a [routerLink]="['/profile']">Profile</a></li>
+            <li *ngIf='!authService.loggedIn() && navdisplay == "Administrator"' [routerLinkActive]="['active']" [routerLinkActiveOptions]='{exact:true}'><a [routerLink]="['/app1/profile']">Profile</a></li>
+            <li *ngIf='!authService.loggedIn() && navdisplay == "Mentor"' [routerLinkActive]="['active']" [routerLinkActiveOptions]='{exact:true}'><a [routerLink]="['/app2/profile']">Profile</a></li>
+
+
+            <li *ngIf='authService.loggedIn()' [routerLinkActive]="['active']" [routerLinkActiveOptions]='{exact:true}'><a [routerLink]="['/login']">Login</a></li>
+            <li *ngIf='!authService.loggedIn()'><a (click)='onLogoutClick()' href='#'>Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>

@@ -1,0 +1,68 @@
+<h1 class='page-header'><b>Administrator Dashboard</b></h1>
+<div class="data-list">
+  <div class='col-sm-3'>
+
+    <div class="vertical-menu" style="width:100%">
+      <a href="/app1/dashboard" class="active">Dashboard</a>
+      <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Edit Pages
+        <i class="fa fa-caret-down"></i>
+      </a>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          <a  [routerLink]="['/app1/home']" >Home</a>
+          <a [routerLink]="['/app1/intro']">Intro</a>
+          <a [routerLink]="['/app1/step1']">Step 1</a>
+          <a [routerLink]="['/app1/step2']">Step 2</a>
+          <a [routerLink]="['/app1/step3']">Step 3</a>
+          <a [routerLink]="['/app1/step4']">Step 4</a>
+          <a [routerLink]="['/app1/step5']">Step 5</a>
+        </div>
+      </div>
+      <a [routerLink]="['/app1/images']">Upload Images</a>
+
+    </div>
+    <br><br>
+    <br><br>
+  </div>
+  <div class='col-sm-9'>
+    <div class="searchbar" style="float: right; width: 100%;">
+      <input type="text" [(ngModel)]="filter.groupname" name="groupname" class="form-control"  placeholder="Search">
+      <br>
+    </div>
+    <br><br><br>
+    <div *ngFor="let user of users| filterBy: filter; let in=index">
+      <!-- <table style="width:100%">
+      <tr>
+        <td style = "width: 30%; text-align: center;">
+          <h1 style="color:#001A72;">{{user.groupname}}</h1>
+          <br><br>
+        </td>
+        <td></td>
+      </tr>
+      </table>
+      <br><br> -->
+      <div class="col-sm-12" id="user">
+        <div class="col-sm-7">
+          <h1 style='word-wrap: break-word;color:#001A72;'><a [routerLink]="['/app1/group/', user._id]">{{user.groupname}}</a></h1>
+        </div>
+        <div class="col-sm-5">
+          <h2 style='word-wrap: break-word;'>Progress: {{findProgress(user)}}</h2>
+        </div>
+        <div class="col-sm-12"><br></div>
+        <div class="col-sm-3">
+          <h2>Current Tasks:</h2>
+        </div>
+        <div *ngFor="let firsttask of tasks[in]">
+          <div class="col-sm-3">
+
+            <div  id="task">
+              <!-- {{getFirstTasks("5e8eb38febf21c7bfa267054")}} -->
+                <h4 style='word-wrap: break-word;'>{{firsttask.content}}</h4>
+                <br><br>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</div>

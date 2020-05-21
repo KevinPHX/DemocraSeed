@@ -1,0 +1,63 @@
+<h2 style="float:right; padding-right: 50px;">{{cityname}}</h2>
+<h1 style="padding-left: 15px;"><b>{{groupname}}</b></h1>
+
+<div class="col-sm-9">
+  <h2><b>Progress: {{findProgress()}}</b></h2>
+
+  <br>
+  <div class="col-sm-6">
+    <label>Advisor Name</label>
+    <h3 style='word-wrap: break-word;'>{{advisorfirstname}} {{advisorlastname}}</h3>
+    <br>
+  </div>
+  <div class="col-sm-6">
+    <label>Advisor Email</label>
+    <h3 style='word-wrap: break-word;'>{{advisoremail}}</h3>
+    <br>
+  </div>
+  <div class="col-sm-12"></div>
+  <div class="col-sm-6">
+    <label>Members</label>
+    <div *ngFor="let member of memberlist">
+
+    <ul class="list-group">
+      <li class="list-group-item" style='word-wrap: break-word;'>Name: {{member.memberfirstname}} {{member.memberlastname}}</li>
+      <li class="list-group-item" style='word-wrap: break-word;'>Email: {{member.memberemail}}</li>
+    </ul>
+
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label>Mentor: </label>
+      <select [(ngModel)]="mentor" class="form-control">
+        <option [value]="null" style="padding: 20px;" >Select Mentor</option>
+        <option *ngFor="let mentor of mentors" [value]="mentor._id">{{mentor.mentorfirstname}} {{mentor.mentorlastname}}</option>
+      </select>
+      <br>
+      <input type="submit" name="submit" value="Save Mentor" (click)="saveMentor()" class="btn btn-primary">
+    </div>
+
+  </div>
+</div>
+<div class="col-sm-3">
+  <h2><b>Current Tasks:</b></h2>
+  <div *ngFor="let task of tasks">
+    <div  id="task">
+        <h4 style='word-wrap: break-word;'>{{task.content}}</h4>
+        <br><br>
+    </div>
+    <br>
+  </div>
+</div>
+<!-- <div class="col-sm-3">
+  <h2><b>Current Tasks:</b></h2>
+  <div *ngFor="let task of tasks">
+    <div  id="task">
+      <button  class = 'btn btn-link' (click)="removeTask(task._id)" style="float:right;" ><span class="glyphicon glyphicon-remove" ></span></button>
+        <h4 style='word-wrap: break-word;'>{{task.content}}</h4>
+        <br><br>
+    </div>
+    <br>
+  </div>
+</div> -->

@@ -1,0 +1,27 @@
+<h1 class='page-header'>Forgot</h1>
+<form (submit)='onForgotSubmit()'>
+  <div class='form-group'>
+    <label>Email</label>
+    <input type='text' class='form-control' [(ngModel)]='email' name='email'>
+  </div>
+  <input type='submit' class='btn btn-primary' value='Submit'>
+</form>
+
+
+<div class="modal" id="myModal" role="dialog" style="z-index: 9999;">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <h3>Reset Email has been sent</h3>
+          <p>A link to reset your password has been sent to your email account</p>
+          <p>Please note: We use a third party email service, so the email may show up as spam.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" [routerLink]="['/login']">Ok</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">Open Modal</button>
