@@ -8,7 +8,7 @@
     "start": "node app"
   },
   "dependencies": {
-    "@angular/cli": "^1.6.3",
+    "@angular/cli": "^15.0.0",
     "ajax": "0.0.4",
     "angular": "^1.6.4",
     "angular-route": "^1.6.4",
